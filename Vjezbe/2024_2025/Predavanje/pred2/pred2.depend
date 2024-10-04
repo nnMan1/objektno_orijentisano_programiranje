@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1728028413 source:d:\pc\desktop\oo_2024\pred2\main.cpp
+	<iostream>
+	<string.h>
+	"Student.h"
+
+1728028866 source:d:\pc\desktop\oo_2024\pred2\student.cpp
+	"Student.h"
+
+1728028665 d:\pc\desktop\oo_2024\pred2\student.h
+	<iostream>
+	<string.h>
+
