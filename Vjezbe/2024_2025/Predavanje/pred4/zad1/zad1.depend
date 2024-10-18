@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1729234767 source:/home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Complex.cpp
+	"Complex.h"
+
+1729234784 /home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Complex.h
+	<iostream>
+
+1729237719 source:/home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/main.cpp
+	<iostream>
+	"Complex.h"
+	"Circle.h"
+
+1729236694 source:/home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Point.cpp
+	"Point.h"
+	<iostream>
+
+1729238125 /home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Point.h
+
+1729237824 source:/home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Circle.cpp
+	"Circle.h"
+	<iostream>
+
+1729238118 /home/velibor/MEGAsync/Posao/OO/Vjezbe/2024_2025/Predavanje/pred4/zad1/Circle.h
+	"Point.h"
+
