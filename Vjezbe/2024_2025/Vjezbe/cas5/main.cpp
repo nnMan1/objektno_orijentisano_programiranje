@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include "Datum.h"
+
+using namespace std;
+
+/**
+* 1. Napisati klasu datum. (d, m,g)
+* - Konstruktor bez argumenata, postavlja datum na 1.1.1. 
+* - Konstruktor sa 3 argumenta 
+* - bool prestupna() const; //provjerava da li je godina prestupna 
+* - static bool validan(int d, int g, int m); //provjerava da li d, m, g predstavlja ispravan datum +
+* - Getere 
+* - int get_dan_u_nedelji() const; // 1 = ponedljeljak, 7 = nedelja +
+* - void pisi() const; 
+* - Datum sljedeci() const; +
+* - Datum prethodni() const; +
+* - int broj_dana_od_pocetka_godine() const; 
+* - int razlika(const Datum&) const; +
+*
+* 2.Napisati klasu za ulancanu listu datuma
+* -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
+* -- ulancana lista cuva pokazivac na pocetak liste
+* - Konstruktor bez argumenata koji kreira praznu listu +
+* - Destruktor +
+* - Konstruktor kopije +
+* - int duzina() const; +
+* - ListaDatuma& dodaj_na_pocetak(Datum); +
+* - ListaDatuma& dodaj_na_kraj(Datum); +
+* - void ukloni(const Datum &d); //uklanja prvo pojavljivanje +
+* - const Datum* najkasniji_datum(); +
+* - void pisi() const; +
+**/
+
+int main() {
+
+    cout << Datum::validan(29, 2, 2025) << endl;
+
+    Datum d1(5, 2, 2024);
+
+    d1.pisi(); cout << endl;
+    cout << d1.broj_dana_od_pocetka_godine() << endl;
+}
