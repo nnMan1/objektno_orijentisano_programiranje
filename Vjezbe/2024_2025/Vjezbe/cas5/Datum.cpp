@@ -45,6 +45,52 @@ bool Datum::validan(int d, int m, int g) {
     return true;
 }
 
+Datum Datum::sljedeci() const {
+    Datum ret = *this;
+
+    ret.d ++;
+
+    if(ret.d > mjesec_dan[ret.prestupna()][ret.m]) {
+        ret.d = 1;
+        ret.m ++;
+    }
+
+    if(ret.m == 13) {
+        ret.m = 1;
+        ret.g ++;
+    }
+
+    return ret;
+}
+
+Datum Datum::prethodni() const {
+    Datum ret = *this;
+
+    ret.d --;
+
+    if(ret.d == 0) {
+        ret.m --;
+        ret.d = mjesec_dan[ret.prestupna()][ret.m];
+    }
+
+    if(ret.m == 0) {
+        ret.m = 12;
+        ret.g --;
+    }
+
+    return ret;
+}
+
+int Datum::razlika(const Datum& d) const {
+    return this->br_dana_od_111() - d.br_dana_od_111();
+}
+
+int Datum::get_dan_u_nedelji() const {
+    int r = this->razlika(Datum(4, 11, 2024));
+
+    return (7 + (r % 7)) % 7 + 1;
+}
+
 bool Datum::prestupna() const {
     return g % 400 == 0|| g % 100 != 0 && g % 4 == 0;
 }
@@ -61,5 +107,17 @@ void Datum::pisi() const {
     cout << d << "." << m << "." << g << ".";
 }
 
-const int Datum::mjesec_dan[2][13] = {{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
-                                     {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
+int Datum::br_dana_od_111() const {
+
+    int br = broj_dana_od_pocetka_godine();
+    br += 365 * (g-1);
+    br += (g - 1) / 4;
+    br -= (g - 1) / 100;
+    br += (g - 1) / 400;
+
+    return br;
+}
+
+
+const int Datum::mjesec_dan[2][13] = {{31, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+                                      {31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};

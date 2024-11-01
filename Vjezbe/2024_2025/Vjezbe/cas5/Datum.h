@@ -18,6 +18,11 @@ public:
 
     static bool validan(int d, int m, int g);
 
+    Datum sljedeci() const;
+    Datum prethodni() const;
+    int razlika(const Datum&) const;
+    int get_dan_u_nedelji() const;
+    
     bool prestupna() const;
     int broj_dana_od_pocetka_godine() const; 
 
@@ -25,6 +30,8 @@ public:
 
 private:
     static const int mjesec_dan[2][13];
+    int br_dana_od_111() const;
+    
 };
 
 #endif

@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "Datum.h"
+#include "ListaDatuma.h"
 
 using namespace std;
 
@@ -11,21 +12,21 @@ using namespace std;
 * - bool prestupna() const; //provjerava da li je godina prestupna 
 * - static bool validan(int d, int g, int m); //provjerava da li d, m, g predstavlja ispravan datum +
 * - Getere 
-* - int get_dan_u_nedelji() const; // 1 = ponedljeljak, 7 = nedelja +
+* - int get_dan_u_nedelji() const; // 1 = ponedljeljak, 7 = nedelja 
 * - void pisi() const; 
-* - Datum sljedeci() const; +
-* - Datum prethodni() const; +
+* - Datum sljedeci() const;
+* - Datum prethodni() const; 
 * - int broj_dana_od_pocetka_godine() const; 
-* - int razlika(const Datum&) const; +
+* - int razlika(const Datum&) const; 
 *
 * 2.Napisati klasu za ulancanu listu datuma
 * -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
 * -- ulancana lista cuva pokazivac na pocetak liste
-* - Konstruktor bez argumenata koji kreira praznu listu +
+* - Konstruktor bez argumenata koji kreira praznu listu 
 * - Destruktor +
 * - Konstruktor kopije +
 * - int duzina() const; +
-* - ListaDatuma& dodaj_na_pocetak(Datum); +
+* - ListaDatuma& dodaj_na_pocetak(Datum); 
 * - ListaDatuma& dodaj_na_kraj(Datum); +
 * - void ukloni(const Datum &d); //uklanja prvo pojavljivanje +
 * - const Datum* najkasniji_datum(); +
@@ -40,4 +41,23 @@ int main() {
 
     d1.pisi(); cout << endl;
     cout << d1.broj_dana_od_pocetka_godine() << endl;
+
+    Datum d3(13, 2, 2024);
+    d3.sljedeci().pisi(); cout << endl;
+
+    d3.prethodni().pisi(); cout << endl;
+
+    Datum d4(5, 6, 2024);
+    cout << d4.razlika(d3) << endl;
+
+    cout << d4.get_dan_u_nedelji() << endl;
+
+    ListaDatuma l1;
+    l1.dodaj_na_pocetak(d4);
+    l1.dodaj_na_pocetak(d4.sljedeci());
+    l1.dodaj_na_pocetak(d4.prethodni());
+    l1.dodaj_na_pocetak(d3);
+
+    l1.pisi();
+
 }
