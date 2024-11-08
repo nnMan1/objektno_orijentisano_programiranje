@@ -16,10 +16,18 @@ class ListaDatuma{
 
 public:
     ListaDatuma();
+    ~ListaDatuma();
+    ListaDatuma(const Datum&);
+    ListaDatuma(const ListaDatuma&);
 
     void dodaj_na_pocetak(const Datum&); 
+    void dodaj_na_kraj(const Datum&); 
+    void ukloni(const Datum&);
 
     void pisi() const;
+
+private:
+    void clear_list(Node * head);
 };
 
 #endif

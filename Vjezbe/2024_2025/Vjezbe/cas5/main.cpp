@@ -23,15 +23,20 @@ using namespace std;
 * -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
 * -- ulancana lista cuva pokazivac na pocetak liste
 * - Konstruktor bez argumenata koji kreira praznu listu 
-* - Destruktor +
-* - Konstruktor kopije +
+* - Destruktor 
+* - Konstruktor kopije 
 * - int duzina() const; +
 * - ListaDatuma& dodaj_na_pocetak(Datum); 
-* - ListaDatuma& dodaj_na_kraj(Datum); +
+* - ListaDatuma& dodaj_na_kraj(Datum); 
 * - void ukloni(const Datum &d); //uklanja prvo pojavljivanje +
 * - const Datum* najkasniji_datum(); +
-* - void pisi() const; +
+* - void pisi() const; 
 **/
+
+void ne_radi_nista(ListaDatuma l) {
+    cout << "Funckija koja ne radi nista\n";
+    return;
+}
 
 int main() {
 
@@ -58,6 +63,31 @@ int main() {
     l1.dodaj_na_pocetak(d4.prethodni());
     l1.dodaj_na_pocetak(d3);
 
-    l1.pisi();
+    l1.pisi(); cout << endl;
+
+    l1.dodaj_na_kraj(d3.sljedeci());
+
+    l1.pisi(); cout << endl;
+
+    ListaDatuma l2 = l1; // l2(l1);
+
+    l2.dodaj_na_kraj(d3);
+
+    cout << "l1 = "; l1.pisi(); cout << endl;
+
+    ListaDatuma *l4 = new ListaDatuma(l1);
+
+    cout << "Pozivamo funkciju koja ne radi nista\n";
+    ne_radi_nista(l1);
+    cout << "Zavrsila se funkcija koja ne radi nista\n";
+
+    delete l4;
+
+    l1.ukloni(d4.sljedeci());
+    cout << "l1 = "; l1.pisi(); cout << endl;
+
+    ListaDatuma l5 = d4;
+    l5.pisi(); cout << endl;
+
 
 }
