@@ -2,6 +2,7 @@
 #define DATUM_H
 
 class Datum {
+protected:
     int d, m, g;
 
 public:
@@ -26,7 +27,7 @@ public:
     bool prestupna() const;
     int broj_dana_od_pocetka_godine() const; 
 
-    void pisi() const;
+    virtual void pisi() const;
 
 private:
     static const int mjesec_dan[2][13];

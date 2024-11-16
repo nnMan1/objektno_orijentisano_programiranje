@@ -4,9 +4,12 @@
 using namespace std;
 
 Datum::Datum():d(1), m(1), g(1) {
+    cout << "Konstruktor osnovne klase Datum bez argumenata" << endl;
 }
 
+
 Datum::Datum(int d, int m, int g) {
+    cout << "Konstruktor onsnovne klase Datum sa tri argumenata" << endl;
     set_g(g);
     set_m(m);
     set_d(d);

@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "Datum.h"
+#include "DatumVrijeme.h"
 #include "ListaDatuma.h"
 
 using namespace std;
@@ -18,6 +19,12 @@ using namespace std;
 * - Datum prethodni() const; 
 * - int broj_dana_od_pocetka_godine() const; 
 * - int razlika(const Datum&) const; 
+*
+* 1.5. Napisati klasu DatumVrijeme koja je 
+    javno izvedena iz klase Datum i dodatno sadrzi hh i mm
+    -Konstrukor bez argumenata poziva konstruktor osnovne klase bez argumenata i postavlja vrijeme na 00:00
+    -Kosntruktor sa 5 argumenata
+    -Predefinisati metodu pisi
 *
 * 2.Napisati klasu za ulancanu listu datuma
 * -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
@@ -39,6 +46,22 @@ void ne_radi_nista(ListaDatuma l) {
 }
 
 int main() {
+
+    DatumVrijeme v1, v2(5, 3, 2024, 00, 12);
+
+    v2.pisi(); cout << endl;
+
+    Datum d0 = v2;
+
+    d0.pisi(); cout << endl;
+
+    Datum dd0;
+    //DatumVrijeme v3 = dd0;
+
+    Datum* d_ptr = &v2;
+    d_ptr->pisi(); cout << endl;
+    
+    return 0;
 
     cout << Datum::validan(29, 2, 2025) << endl;
 
