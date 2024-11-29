@@ -28,3 +28,11 @@ void Sfera::pisi() const {
 Tijelo* Sfera::kopija() const {
     return new Sfera(r);
 }
+
+// Sfera Sfera::operator+(Sfera s){
+//     return Sfera(r + s.r);
+// }
+
+Sfera operator+(Sfera s1, Sfera s2) {
+    return Sfera(s1.r+s2.r);
+}

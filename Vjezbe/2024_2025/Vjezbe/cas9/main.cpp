@@ -10,15 +10,15 @@
 
 ///Klasa Sfera javno izvedena iz klase Tijelo
 ///ID za sferu je oblika S1, S2, S3 ...
-///Sfera je zadata poluprecnikom             +
-///Oznaka vrste predmeta je 'S'              +
-///Stampa se kao id(r). Npr. S2(3)           +
+///Sfera je zadata poluprecnikom             
+///Oznaka vrste predmeta je 'S'              
+///Stampa se kao id(r). Npr. S2(3)           
 
 ///Klasa Valjak javno izvedena iz klase Tijelo
-///ID za valjak je oblika V1, V2, V3 ...     +
-///Zadaje se poluprecnikom r i visinom h      +
-///Oznaka vrste predmeta je 'V'              +
-///Stampa se kao id(r, h). Npr V5(3,4)       +
+///ID za valjak je oblika V1, V2, V3 ...     
+///Zadaje se poluprecnikom r i visinom h      
+///Oznaka vrste predmeta je 'V'              
+///Stampa se kao id(r, h). Npr V5(3,4)       
 
 ///Klasa RedTijela, stvara se prazan red zadatog kapaciteta (podrazumijevano 5).            +
 ///Implementirati konstruktor kopije
@@ -30,6 +30,7 @@
 #include <iostream>
 #include "Tijelo.h"
 #include "Sfera.h"
+#include "Valjak.h"
 
 using namespace std;
 
@@ -41,9 +42,23 @@ int main() {
     s1.pisi(); cout << endl;
     s2.pisi(); cout << endl;
 
+    Sfera s4 = 3 + s1;
+    s4.pisi(); cout << endl;
+
     Tijelo* s3 = new Sfera(6);
     s3->pisi(); cout << endl;
 
+    Valjak v1(3, 5);
+    //v1.pisi(); cout << endl;
+    cout << v1 << endl;
+
+    Valjak v2 = v1 + v1;
+    cout << v1 << "+" << v1 << "=" << v2 << endl;
+
+    //Valjak v2 = v2 + v1;
+    //Valjak v2 = v1.operator+(v2);
+    //cout << v1;
+    //cout.operator<<(v1);
 
 
     return 0;

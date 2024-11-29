@@ -14,6 +14,9 @@ public:
     virtual void pisi() const;
     virtual Tijelo* kopija() const;
 
+    //Sfera operator+(Sfera);
+    friend Sfera operator+(Sfera, Sfera);
+
 };
 
 #endif
