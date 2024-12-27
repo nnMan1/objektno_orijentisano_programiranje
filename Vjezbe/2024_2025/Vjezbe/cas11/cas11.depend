@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1732874505 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/RedTijela.cpp
+	"RedTijela.h"
+	<iostream>
+
+1732874517 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/RedTijela.h
+	"Tijelo.h"
+
+1732269296 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Tijelo.h
+	<iostream>
+
+1732874205 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Sfera.cpp
+	"Sfera.h"
+	"math.h"
+	<iostream>
+
+1732874166 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Sfera.h
+	"Tijelo.h"
+
+1732268815 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Tijelo.cpp
+	"Tijelo.h"
+	<stdio.h>
+
+1732873836 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Valjak.cpp
+	"Valjak.h"
+	<iostream>
+	<math.h>
+
+1732873916 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Valjak.h
+	"Tijelo.h"
+	<iostream>
+
+1733477704 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/main.cpp
+	<iostream>
+	"Tijelo.h"
+	"Red.h"
+
+1733478851 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Red.h
+	"Red.cpp"
+
+1733479012 source:/mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Red.cpp
+	<iostream>
+	"Red.h"
+
+1733479012 /mnt/618E45BE72620BDD/MEGAsync/Posao/OO/Vjezbe/2024_2025/Vjezbe/cas11/Red.cpp
+	<iostream>
+	"Red.h"
+

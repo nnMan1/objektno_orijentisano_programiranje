@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1734080590 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas12\matica.cpp
+	"Matica.h"
+
+1734080368 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas12\matica.h
+	"Matica.cpp"
+
+1734080675 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas12\matica.cpp
+	"Matica.h"
+
+1734080650 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas12\main.cpp
+	<iostream>
+	<string.h>
+	"Matica.h"
+

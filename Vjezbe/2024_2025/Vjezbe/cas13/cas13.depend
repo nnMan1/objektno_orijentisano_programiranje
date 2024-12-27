@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1735287354 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\main.cpp
+	<iostream>
+	"Ocjena.h"
+	"OcjenaException.h"
+
+1734683323 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\ocjenaexception.cpp
+	"OcjenaException.h"
+	<string.h>
+
+1734683229 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\ocjenaexception.h
+	<exception>
+
+1734685486 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\ocjena.cpp
+	"Ocjena.h"
+
+1735285277 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\ocjena.h
+	"OcjenaException.h"
+	<iostream>
+
+1735286887 source:f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\genmatrix.cpp
+	"GenMatrix.h"
+	<exception>
+
+1735287061 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\genmatrix.h
+	"GenMatrix.cpp"
+
+1735286887 f:\megasync\posao\oo\vjezbe\2024_2025\vjezbe\cas13\genmatrix.cpp
+	"GenMatrix.h"
+	<exception>
+
