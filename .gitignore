@@ -1,0 +1,10 @@
+.vscode/
+Kolokvijum*
+Rezultati*
+Vjezbe/*
+Materijali
+!Vjezbe/2025-2026/
+# !Vjezbe/2025-2026/*/
+!Vjezbe/2025-2026/*/*.cpp
+!Vjezbe/2025-2026/*/*.h
+Vjezbe/2025-2026/Pripreme/*
