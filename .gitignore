@@ -1,10 +1,20 @@
-.vscode/
 Kolokvijum*
 Rezultati*
-Vjezbe/*
 Materijali
+
+# Ignore everything in Vjezbe
+Vjezbe/*
+
+#Do not ignore vjezbe from this year
 !Vjezbe/2025-2026/
-# !Vjezbe/2025-2026/*/
-!Vjezbe/2025-2026/*/*.cpp
+
+#Ignore all files in this year Vjezbe
+Vjezbe/2025-2026/cas*/*
+
+#Do not ignore files from this year that end with .cpp or .h
 !Vjezbe/2025-2026/*/*.h
+!Vjezbe/2025-2026/*/*.cpp
+
 Vjezbe/2025-2026/Pripreme/*
+.vscode/
+
