@@ -19,6 +19,7 @@
 #include <iostream>
 #include <math.h>
 #include "ugao.h"
+#include "stack.h"
 
 using namespace std;
 
@@ -41,6 +42,24 @@ int main() {
     Ugao u4 = u2.minus(u1);
 
     cout << u4.get_step() <<endl;
+
+    Stack s1(2);
+    s1.push(10);
+    s1.push(1);
+    s1.push(15);
+
+    const Stack s2 = s1;
+    
+    cout << "s1.top() = " << s1.top() << endl;
+    cout << "s1.pop() = " << s1.pop() << endl;
+    cout << "s1.top() = " << s1.top() << endl;
+
+    s1.push(20);
+
+    cout << "s1 = "; s1.print(); cout << endl;
+    cout << "s2 = "; s2.print(); cout << endl;
+
+    Stack s3 = s2;
 
     return 0;
 }
