@@ -7,8 +7,11 @@
 * - Getere +
 * - int get_dan_u_nedelji() const; // 1 = ponedljeljak, 7 = nedelja +
 * - void pisi() const; +
-* - Datum sljedeci() const; +
-* - Datum prethodni() const; +
+* - Datum operator++() const; //uvecava datum za 1 dan (prefiksni i postfiksni)
+* - Datum operator--() const; //umanjuje datum za 1 dan (prefiksni i postfiksni)
+* - Datum operator+(int d);
+* - int opertaor-(Datum d);
+* - Datum operator-(int d);
 * - int broj_dana_od_pocetka_godine() const; +
 * - int razlika(const Datum&) const; +
 *
@@ -34,17 +37,32 @@ using namespace std;
 
 int main() {
 
-    Datum d1(5, 3, 2024);
+    Datum d1(31, 12, 2024);
     cout << d1.get_d() << "." << d1.get_m() << "." << d1.get_g() << endl;
     
-    Datum * d2_ptr = new Datum(6, 3, 2025); //datum koji se nalazi na heap
+    Datum * d2_ptr = new Datum(32, 3, 2025); //datum koji se nalazi na heap
 
     // Datum d3;
 
     Interval i1(d1, *d2_ptr);
     Interval i2(25, 9, 2025, 31, 12, 2025);
 
-    cout << "d1 " << (d1.prestupna() ? "je" : "nije") << " prestupna";
+    Datum d3 = d1;
+
+    cout << "d1 " << (d1.prestupna() ? "je" : "nije") << " prestupna" << endl;
+    cout << "Datum::validan(31, 6, 2007) = " << Datum::validan(31, 6, 2007) << endl;
+    cout << "d1.validan(3, 4, 2025) = " << d1.validan(3, 4, 2025) << endl;
+
+    cout << "Br instanci datum = " << Datum::get_br_instanci() << endl;
+
+    cout << "d1 = "; d1.print(); cout << endl;
+
+    Datum d4 = ++ ++d1;
+    // Datum d4 = d1++ ++;
+    
+
+    cout << "d1 = "; d1.print(); cout << endl;
+    cout << "d4 = "; d4.print(); cout << endl;
 
     delete d2_ptr;
     
