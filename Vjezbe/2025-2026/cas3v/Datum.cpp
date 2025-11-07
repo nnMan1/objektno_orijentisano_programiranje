@@ -11,6 +11,15 @@ Datum::Datum() {
     br_instanci ++;
 }
 
+Datum::Datum(int d) {
+    this->d = 1;
+    this->m = 1;
+    this->g = 0;
+
+    for(int i=0;i<d;i++)
+        this->operator++();
+}
+
 Datum::Datum(int d, int m, int g): d(d), m(m) {
     this->g = g;
     br_instanci++;
@@ -66,6 +75,47 @@ Datum Datum::operator++(int) {
     return ret;
 }
 
+int Datum::broj_dana_od_pocetka_godine() const {
+    int br = this->d;
+
+    for(int i=1; i<this->m; i++) {
+        br += br_dana_u_mjesecu[prestupna()][i];
+    }
+
+    return br;
+}
+
+int Datum::br_dana_od_110() const {
+    int br = broj_dana_od_pocetka_godine();
+
+    br += g * 365;
+    br += g / 4 - g / 100 + g / 400;
+
+    return br;
+}
+
+// int Datum::operator-(Datum& d) const {
+//     int br1 = this->br_dana_od_110();
+//     int br2 = d.br_dana_od_110();
+
+//     return br1 - br2;
+// }
+
+Datum Datum::operator-(int d) {
+    Datum cpy = *this;
+
+    int br1 = this->br_dana_od_110();
+    br1 -= d;
+
+    return Datum(br1);
+}
+
+int operator-(const Datum& d1, const Datum& d2) {
+    int br1 = d1.br_dana_od_110();
+    int br2 = d2.br_dana_od_110();
+
+    return br1 - br2;
+}
 
 void Datum::print() {
     cout << d << "." << m << "." << g;

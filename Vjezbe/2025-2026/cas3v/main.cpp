@@ -10,12 +10,11 @@
 * - Datum operator++() const; //uvecava datum za 1 dan (prefiksni i postfiksni)
 * - Datum operator--() const; //umanjuje datum za 1 dan (prefiksni i postfiksni)
 * - Datum operator+(int d);
-* - int opertaor-(Datum d);
-* - Datum operator-(int d);
+* - int opertaor-(Datum d); +
+* - Datum operator-(int d); + 
 * - int broj_dana_od_pocetka_godine() const; +
-* - int razlika(const Datum&) const; +
 *
-* 2.Napisati klasu za ulancanu listu datuma
+* 2.* 2.Napisati klasu za ulancanu listu datuma
 * -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
 * -- ulancana lista cuva pokazivac na pocetak liste
 * - Konstruktor bez argumenata koji kreira praznu listu +
@@ -23,7 +22,7 @@
 * - Konstruktor kopije +
 * - int duzina() const; +
 * - ListaDatuma& dodaj_na_pocetak(Datum); +
-* - ListaDatuma& dodaj_na_kraj(Datum); +
+* - ListaDatuma& operator+=(Datum); +
 * - void ukloni(const Datum &d); //uklanja prvo pojavljivanje +
 * - const Datum* najkasniji_datum(); +
 * - void pisi() const; +
@@ -32,11 +31,11 @@
 #include <iostream>
 #include "Datum.h"
 #include "Interval.h"
+#include "ListaDatuma.h"
 
 using namespace std;
 
 int main() {
-
     Datum d1(31, 12, 2024);
     cout << d1.get_d() << "." << d1.get_m() << "." << d1.get_g() << endl;
     
@@ -53,7 +52,7 @@ int main() {
     cout << "Datum::validan(31, 6, 2007) = " << Datum::validan(31, 6, 2007) << endl;
     cout << "d1.validan(3, 4, 2025) = " << d1.validan(3, 4, 2025) << endl;
 
-    cout << "Br instanci datum = " << Datum::get_br_instanci() << endl;
+    // delete d2_ptr;
 
     cout << "d1 = "; d1.print(); cout << endl;
 
@@ -61,8 +60,27 @@ int main() {
     // Datum d4 = d1++ ++;
     
 
-    cout << "d1 = "; d1.print(); cout << endl;
-    cout << "d4 = "; d4.print(); cout << endl;
+    cout << "d1 = "; d1.print(); cout << " Br. dana od pocetka = " << d1.broj_dana_od_pocetka_godine() << endl;
+    cout << "d3 = "; d3.print(); cout << " Br. dana od pocetka = " << d3.broj_dana_od_pocetka_godine() << endl;
+
+    Datum d5(5, 4, 2025);
+
+    cout << "d5 - 5 = "; (d5-5).print(); cout << endl; 
+
+    // cout << "d5 - d4 = " << d5 - d4 << endl; 
+    // cout << "d5 - d4 = " << d5.operator-(d4) << endl; 
+
+    // cout << d5 - Datum(1, 1, 1) << endl;
+    // cout << d5.operator-(739345) << endl;
+
+    // cout << 739345 - d5 << endl;
+
+    ListaDatuma l1;
+    l1.dodaj_na_pocetak(d1);
+    l1.dodaj_na_pocetak(d4);
+    l1.dodaj_na_pocetak(d3);
+
+    l1.print(); cout << endl;
 
     delete d2_ptr;
     
