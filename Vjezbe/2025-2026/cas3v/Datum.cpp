@@ -1,5 +1,7 @@
 #include "Datum.h"
 #include <iostream>
+#include <string.h>
+#include <string>
 
 using namespace std;
 
@@ -116,6 +118,27 @@ int operator-(const Datum& d1, const Datum& d2) {
 
     return br1 - br2;
 }
+
+ostream& operator<<(ostream& os, const Datum& d) {
+    os << d.d << "." << d.m << "." << d.g;
+    return os;
+}
+
+istream& operator>>(istream& is, Datum& d) {
+    // char c;
+    // //25.1.2023.
+    // is >> d.d >> c >> d.m >> c >> d.g >> c;
+    char datum[50];
+    is >> datum;
+    char *rem;
+
+    d.d = strtol(datum, &rem, 10);
+    d.m = strtol(rem+1, &rem, 10);
+    d.g = strtol(rem+1, &rem, 10);
+
+    return is;
+}
+
 
 void Datum::print() {
     cout << d << "." << m << "." << g;

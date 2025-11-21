@@ -17,12 +17,20 @@ class Node {
 class ListaDatuma {
     public:
         ListaDatuma();
-        ListaDatuma dodaj_na_pocetak(const Datum&);
+        ListaDatuma(const ListaDatuma&);
+        ListaDatuma& dodaj_na_pocetak(const Datum&);
+        ListaDatuma& dodaj_na_kraj(const Datum&);
+
+        ListaDatuma& operator=(const ListaDatuma&);
+        
 
         void print() const;
     protected:
     private:
         Node* head;
+
+        Node* dodaj_na_kraj(Node* head, const Datum&);
+        void clear_list(Node*);
 };
 
 #endif

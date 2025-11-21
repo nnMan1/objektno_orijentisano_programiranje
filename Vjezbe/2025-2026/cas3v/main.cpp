@@ -14,6 +14,12 @@
 * - Datum operator-(int d); + 
 * - int broj_dana_od_pocetka_godine() const; +
 *
+* 1.5. Napisati klasu DatumVrijeme koja je 
+*   javno izvedena iz klase Datum i dodatno sadrzi hh i mm
+*   -Konstrukor bez argumenata poziva konstruktor osnovne klase bez argumenata i postavlja vrijeme na 00:00
+*   -Kosntruktor sa 5 argumenata
+*   -Predefinisati metodu pisi
+*
 * 2.* 2.Napisati klasu za ulancanu listu datuma
 * -- potrebno je napraviti pomocnu klasu za cvor liste (Node). Cvor liste sadrzi datum i pokazivac na sljedeci cvor liste
 * -- ulancana lista cuva pokazivac na pocetak liste
@@ -36,6 +42,10 @@
 using namespace std;
 
 int main() {
+    // Datum d0;
+    // cin>>d0;
+    // cout << "d0 = " << d0 << endl;
+
     Datum d1(31, 12, 2024);
     cout << d1.get_d() << "." << d1.get_m() << "." << d1.get_g() << endl;
     
@@ -53,19 +63,20 @@ int main() {
     cout << "d1.validan(3, 4, 2025) = " << d1.validan(3, 4, 2025) << endl;
 
     // delete d2_ptr;
-
+    cout << "$$$$$$$$$$$$$$$$$$$$" << endl;
+    cout << "d1 = " << d1 << endl;
     cout << "d1 = "; d1.print(); cout << endl;
 
     Datum d4 = ++ ++d1;
     // Datum d4 = d1++ ++;
     
 
-    cout << "d1 = "; d1.print(); cout << " Br. dana od pocetka = " << d1.broj_dana_od_pocetka_godine() << endl;
-    cout << "d3 = "; d3.print(); cout << " Br. dana od pocetka = " << d3.broj_dana_od_pocetka_godine() << endl;
+    cout << "d1 = " << d1 << " Br. dana od pocetka = " << d1.broj_dana_od_pocetka_godine() << endl;
+    cout << "d3 = " << d3 << " Br. dana od pocetka = " << d3.broj_dana_od_pocetka_godine() << endl;
 
     Datum d5(5, 4, 2025);
 
-    cout << "d5 - 5 = "; (d5-5).print(); cout << endl; 
+    cout << "d5 - 5 = " << (d5-5) << endl; 
 
     // cout << "d5 - d4 = " << d5 - d4 << endl; 
     // cout << "d5 - d4 = " << d5.operator-(d4) << endl; 
@@ -80,7 +91,20 @@ int main() {
     l1.dodaj_na_pocetak(d4);
     l1.dodaj_na_pocetak(d3);
 
-    l1.print(); cout << endl;
+    cout << "l1 = "; l1.print(); cout << endl;
+
+    int x = 5;
+    int y = 6;
+
+    ListaDatuma l2;
+    l2 = l1;
+    l2 = l2;
+    l2.dodaj_na_kraj(d1);
+
+    cout << "l1 = ";  l1.print(); cout << endl;
+    cout << "l2 = ";  l2.print(); cout << endl;
+
+
 
     delete d2_ptr;
     
