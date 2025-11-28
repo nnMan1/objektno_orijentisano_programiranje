@@ -7,7 +7,7 @@ using namespace std;
 class Datum {
     public:
         Datum();
-        ~Datum();
+        virtual ~Datum();
         Datum(int d);
         Datum(int, int, int);
         int get_d() const;
@@ -28,7 +28,9 @@ class Datum {
 
         static bool validan(int d, int g, int m);
 
-        void print();
+        virtual void print() const; //virtuelna funkcija
+                                    //poziva se na osnovu tipa objekta
+                                    //ne na osnovu tipa pokazivaca
         friend ostream& operator<<(ostream&, const Datum&);
         friend istream& operator>>(istream&, Datum&);
 

@@ -36,12 +36,26 @@
 
 #include <iostream>
 #include "Datum.h"
+#include "DatumVrijeme.h"
 #include "Interval.h"
 #include "ListaDatuma.h"
 
 using namespace std;
 
 int main() {
+
+    DatumVrijeme dv1(28, 11, 2025, 10, 36);
+    cout << "dv1.print() = ";  dv1.print(); cout << endl; 
+    
+    cout << "cout << dv1 << endl = "; cout << dv1 << endl;
+
+    Datum *dv2_ptr = new DatumVrijeme(28, 11, 2025, 11, 03);
+    cout << "dv2_ptr->print() = "; dv2_ptr->print(); cout << endl;
+
+    delete dv2_ptr;
+
+    return 0;
+
     // Datum d0;
     // cin>>d0;
     // cout << "d0 = " << d0 << endl;

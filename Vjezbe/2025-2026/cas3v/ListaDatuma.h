@@ -17,6 +17,7 @@ class Node {
 class ListaDatuma {
     public:
         ListaDatuma();
+        virtual ~ListaDatuma();
         ListaDatuma(const ListaDatuma&);
         ListaDatuma& dodaj_na_pocetak(const Datum&);
         ListaDatuma& dodaj_na_kraj(const Datum&);

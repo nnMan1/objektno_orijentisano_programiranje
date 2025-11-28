@@ -23,12 +23,14 @@ Datum::Datum(int d) {
 }
 
 Datum::Datum(int d, int m, int g): d(d), m(m) {
+    cout << "Poziva se konstruktor za klasu Dautm" << endl;
     this->g = g;
     br_instanci++;
 }
 
 Datum::~Datum() {
     br_instanci --;
+    cout << "Unistava se Datum na adresi" << this << endl;
 }
 
 
@@ -140,7 +142,7 @@ istream& operator>>(istream& is, Datum& d) {
 }
 
 
-void Datum::print() {
+void Datum::print() const {
     cout << d << "." << m << "." << g;
 }
 

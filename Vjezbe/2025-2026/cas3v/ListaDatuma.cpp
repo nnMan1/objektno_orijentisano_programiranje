@@ -7,6 +7,10 @@ ListaDatuma::ListaDatuma() {
     this->head = nullptr;
 }
 
+ListaDatuma::~ListaDatuma() {
+    clear_list(this->head);
+}
+
 ListaDatuma::ListaDatuma(const ListaDatuma& l) {
     this->head = nullptr;
     for(Node* it=l.head; it!=nullptr; it=it->next) 
