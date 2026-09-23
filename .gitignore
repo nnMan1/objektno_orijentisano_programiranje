@@ -1,0 +1,25 @@
+# Ignoriši sve u root-u
+/*
+
+# Osim ovih fajlova
+!/.gitignore
+!/README.md
+
+# Od vjezbi i predavanja samo 2026-2027
+!/vjezbe/
+/vjezbe/*
+!/vjezbe/2026-2027/
+
+!/predavanja/
+/predavanja/*
+!/predavanja/2026-2027/
+
+# U 2026-2027 ignoriši sve osim .cpp i .h fajlova
+/vjezbe/2026-2027/**
+/predavanja/2026-2027/**
+!/vjezbe/2026-2027/**/
+!/predavanja/2026-2027/**/
+!/vjezbe/2026-2027/**/*.cpp
+!/vjezbe/2026-2027/**/*.h
+!/predavanja/2026-2027/**/*.cpp
+!/predavanja/2026-2027/**/*.h
