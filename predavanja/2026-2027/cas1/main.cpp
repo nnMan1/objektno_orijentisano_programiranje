@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+
+
 // Prva verzija klase
 // class Racun {
 // private:
