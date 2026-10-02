@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 
 // Prva verzija klase
 // class Racun {
@@ -28,11 +28,11 @@
 // Druga verzija klase (main se ne mijenja)
 class Racun{
 private:
-    std::string vlasnik;
+    string vlasnik;
     double uplaceno;
     double isplaceno;
 public:
-    Racun(std::string ime, double pocetno) 
+    Racun(string ime, double pocetno) 
     {
         vlasnik = ime;
         uplaceno = (pocetno > 0) ? pocetno : 0;
@@ -46,46 +46,34 @@ public:
         isplaceno += iznos;
         return true;
     }
-    double getStanje() const 
+    double getStanje() const   
     {
         return uplaceno - isplaceno;
     }
 
+ };
 
-
-// struct Racun 
+// class Racun 
 // {
-//     std::string vlasnik;
-//     double stanje;
-// };
+//     public:
+//      string vlasnik;
+//      double stanje;
+//  };
 
 // void uplata( Racun& r, double iznos){ r.stanje += iznos; }
 // void isplata(Racun& r, double iznos) { r.stanje -= iznos; }
 
 // void prikazi(const Racun& r) 
 // {
-//     std::cout << r.vlasnik << ": " << r.stanje << " EUR\n";
+//      std::cout << r.vlasnik << ": " << r.stanje << " EUR\n";
 // }
 
 int main ()
 {
-
     Racun a("Marko Markovic", 1000); 
-    Racun b("Ana Anic", 500);
-
     a.uplata(200);
     a.isplata(50);
-    std::cout << a.getStanje() << std::endl;
-
-
-    // Racun a{"Marko Markovic", 1000.0}; // struct
-    // Racun b{"Janko Jankovic", 500.0}; //struct
-
-    // uplata (a,150);
-    // isplata (b,100);
-
-    // prikazi(a);
-    // prikazi(b);
+    cout << a.getStanje() << endl;
 
     return 0;
 }
