@@ -23,3 +23,7 @@
 !/vjezbe/2026-2027/**/*.h
 !/predavanja/2026-2027/**/*.cpp
 !/predavanja/2026-2027/**/*.h
+
+!materijali/
+!materijali/Predavanja_slajdovi/
+!materijali/Predavanja_slajdovi/**/*
