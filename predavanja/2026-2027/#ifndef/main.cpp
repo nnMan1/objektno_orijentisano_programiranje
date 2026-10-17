@@ -2,6 +2,8 @@
 #include "Racun.h"
 #include "Kamata.h"     // Kamata.h i sam ukljucuje Racun.h -> drugo ucitavanje fajla Racun.h
 
+using namespace std;
+
 int main()
 {
     Racun a("501-001", "Marko Markovic", 1000);

@@ -18,8 +18,11 @@ public:
     bool isplata(double iznos);
     void prikazi() const;
 
-    double getStanje() const { return stanje; }
+    double getStanje() const;
     static int getBrojRacuna() { return brojRacuna; }
 };
+
+
+inline double Racun::getStanje() const { return stanje; }
 
 #endif
